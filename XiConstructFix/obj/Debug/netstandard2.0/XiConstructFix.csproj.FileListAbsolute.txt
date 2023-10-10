@@ -1,0 +1,12 @@
+C:\Users\Dan\source\repos\XiConstructFix\XiConstructFix\bin\Debug\netstandard2.0\XiConstructFix.deps.json
+C:\Users\Dan\source\repos\XiConstructFix\XiConstructFix\bin\Debug\netstandard2.0\XiConstructFix.dll
+C:\Users\Dan\source\repos\XiConstructFix\XiConstructFix\bin\Debug\netstandard2.0\XiConstructFix.pdb
+C:\Users\Dan\source\repos\XiConstructFix\XiConstructFix\bin\Debug\netstandard2.0\R2API.Language.dll
+C:\Users\Dan\source\repos\XiConstructFix\XiConstructFix\obj\Debug\netstandard2.0\XiConstructFix.csproj.AssemblyReference.cache
+C:\Users\Dan\source\repos\XiConstructFix\XiConstructFix\obj\Debug\netstandard2.0\XiConstructFix.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dan\source\repos\XiConstructFix\XiConstructFix\obj\Debug\netstandard2.0\XiConstructFix.AssemblyInfoInputs.cache
+C:\Users\Dan\source\repos\XiConstructFix\XiConstructFix\obj\Debug\netstandard2.0\XiConstructFix.AssemblyInfo.cs
+C:\Users\Dan\source\repos\XiConstructFix\XiConstructFix\obj\Debug\netstandard2.0\XiConstructFix.csproj.CoreCompileInputs.cache
+C:\Users\Dan\source\repos\XiConstructFix\XiConstructFix\obj\Debug\netstandard2.0\XiConstructFix.csproj.CopyComplete
+C:\Users\Dan\source\repos\XiConstructFix\XiConstructFix\obj\Debug\netstandard2.0\XiConstructFix.dll
+C:\Users\Dan\source\repos\XiConstructFix\XiConstructFix\obj\Debug\netstandard2.0\XiConstructFix.pdb
