@@ -1,6 +1,4 @@
 using BepInEx;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using System;
 using RoR2;
 using System.Collections.Generic;
@@ -37,26 +35,26 @@ namespace XiConstructFix
             {
                 RoR2Application.onLoad += () =>
                 {
-                    AISkillDriver aiSkillDriver1 = ((IEnumerable<AISkillDriver>)Addressables.LoadAssetAsync<GameObject>((object)"RoR2/DLC1/MajorAndMinorConstruct/MegaConstructMaster.prefab").WaitForCompletion().GetComponents<AISkillDriver>()).Where<AISkillDriver>((Func<AISkillDriver, bool>)(x => x.customName == "FleeStep")).First<AISkillDriver>();
-                    //AISkillDriver aiSkillDriver2 = ((IEnumerable<AISkillDriver>) Addressables.LoadAssetAsync<GameObject>((object)"RoR2/DLC1/MajorAndMinorConstruct/MegaConstructMaster.prefab").WaitForCompletion().GetComponents<AISkillDriver>()).Where<AISkillDriver>((Func<AISkillDriver, bool>)(x => x.customName == "StopStep")).First<AISkillDriver>();
-                    AISkillDriver aiSkillDriver3 = ((IEnumerable<AISkillDriver>)Addressables.LoadAssetAsync<GameObject>((object)"RoR2/DLC1/MajorAndMinorConstruct/MegaConstructMaster.prefab").WaitForCompletion().GetComponents<AISkillDriver>()).Where<AISkillDriver>((Func<AISkillDriver, bool>)(x => x.customName == "FollowStep")).First<AISkillDriver>();
-                    AISkillDriver aiSkillDriver4 = ((IEnumerable<AISkillDriver>)Addressables.LoadAssetAsync<GameObject>((object)"RoR2/DLC1/MajorAndMinorConstruct/MegaConstructMaster.prefab").WaitForCompletion().GetComponents<AISkillDriver>()).Where<AISkillDriver>((Func<AISkillDriver, bool>)(x => x.customName == "FollowFast")).First<AISkillDriver>();
-                    AISkillDriver aiSkillDriver5 = ((IEnumerable<AISkillDriver>)Addressables.LoadAssetAsync<GameObject>((object)"RoR2/DLC1/MajorAndMinorConstruct/MegaConstructMaster.prefab").WaitForCompletion().GetComponents<AISkillDriver>()).Where<AISkillDriver>((Func<AISkillDriver, bool>)(x => x.customName == "ShootStep")).First<AISkillDriver>();
-                    Log.LogDebug("flee min distance: " + aiSkillDriver1.minDistance);
-                    Log.LogDebug("flee max distance: " + aiSkillDriver1.maxDistance);
-                    Log.LogDebug("approach min distance: " + aiSkillDriver3.minDistance);
-                    Log.LogDebug("approach max distance: " + aiSkillDriver3.maxDistance);
-                    Log.LogDebug("chase min distance: " + aiSkillDriver4.minDistance);
-                    Log.LogDebug("chase max distance: " + aiSkillDriver4.maxDistance);
-                    aiSkillDriver1.maxDistance = 15.0f;
-                    aiSkillDriver3.minDistance = 30.0f;
-                    aiSkillDriver4.minDistance = 75.0f;
-                    Log.LogDebug("flee min distance: " + aiSkillDriver1.minDistance);
-                    Log.LogDebug("flee max distance: " + aiSkillDriver1.maxDistance);
-                    Log.LogDebug("approach min distance: " + aiSkillDriver3.minDistance);
-                    Log.LogDebug("approach max distance: " + aiSkillDriver3.maxDistance);
-                    Log.LogDebug("chase min distance: " + aiSkillDriver4.minDistance);
-                    Log.LogDebug("chase max distance: " + aiSkillDriver4.maxDistance);
+                    AISkillDriver skillDriverFlee = ((IEnumerable<AISkillDriver>)Addressables.LoadAssetAsync<GameObject>((object)"RoR2/DLC1/MajorAndMinorConstruct/MegaConstructMaster.prefab").WaitForCompletion().GetComponents<AISkillDriver>()).Where<AISkillDriver>((Func<AISkillDriver, bool>)(x => x.customName == "FleeStep")).First<AISkillDriver>();
+                    //AISkillDriver skillDriverStop = ((IEnumerable<AISkillDriver>) Addressables.LoadAssetAsync<GameObject>((object)"RoR2/DLC1/MajorAndMinorConstruct/MegaConstructMaster.prefab").WaitForCompletion().GetComponents<AISkillDriver>()).Where<AISkillDriver>((Func<AISkillDriver, bool>)(x => x.customName == "StopStep")).First<AISkillDriver>();
+                    AISkillDriver skillDriverFollow = ((IEnumerable<AISkillDriver>)Addressables.LoadAssetAsync<GameObject>((object)"RoR2/DLC1/MajorAndMinorConstruct/MegaConstructMaster.prefab").WaitForCompletion().GetComponents<AISkillDriver>()).Where<AISkillDriver>((Func<AISkillDriver, bool>)(x => x.customName == "FollowStep")).First<AISkillDriver>();
+                    AISkillDriver skillDriverFollowFast = ((IEnumerable<AISkillDriver>)Addressables.LoadAssetAsync<GameObject>((object)"RoR2/DLC1/MajorAndMinorConstruct/MegaConstructMaster.prefab").WaitForCompletion().GetComponents<AISkillDriver>()).Where<AISkillDriver>((Func<AISkillDriver, bool>)(x => x.customName == "FollowFast")).First<AISkillDriver>();
+                    AISkillDriver skillDriverShoot = ((IEnumerable<AISkillDriver>)Addressables.LoadAssetAsync<GameObject>((object)"RoR2/DLC1/MajorAndMinorConstruct/MegaConstructMaster.prefab").WaitForCompletion().GetComponents<AISkillDriver>()).Where<AISkillDriver>((Func<AISkillDriver, bool>)(x => x.customName == "ShootStep")).First<AISkillDriver>();
+                    /*Log.LogDebug("flee min distance: " + skillDriverFlee.minDistance);
+                    Log.LogDebug("flee max distance: " + skillDriverFlee.maxDistance);
+                    Log.LogDebug("approach min distance: " + skillDriverFollow.minDistance);
+                    Log.LogDebug("approach max distance: " + skillDriverFollow.maxDistance);
+                    Log.LogDebug("chase min distance: " + skillDriverFollowFast.minDistance);
+                    Log.LogDebug("chase max distance: " + skillDriverFollowFast.maxDistance);*/
+                    skillDriverFlee.maxDistance = 15.0f;
+                    skillDriverFollow.minDistance = 30.0f;
+                    skillDriverFollowFast.minDistance = 75.0f;
+                    /*Log.LogDebug("flee min distance: " + skillDriverFlee.minDistance);
+                    Log.LogDebug("flee max distance: " + skillDriverFlee.maxDistance);
+                    Log.LogDebug("approach min distance: " + skillDriverFollow.minDistance);
+                    Log.LogDebug("approach max distance: " + skillDriverFollow.maxDistance);
+                    Log.LogDebug("chase min distance: " + skillDriverFollowFast.minDistance);
+                    Log.LogDebug("chase max distance: " + skillDriverFollowFast.maxDistance);*/
                 };
 
             }
